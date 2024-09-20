@@ -14,7 +14,7 @@ class BiodataController extends Controller
     {
         //menampilkan data biodata
        $data= Biodata ::all();
-       return view ('biodata.show', compact('data'));
+       return redirect()->route('cv.show');
     }
 
     /**
@@ -45,7 +45,7 @@ class BiodataController extends Controller
 
          // Simpan data ke database
         Biodata::create($validasi );
-        return view('Biodata.show');
+        return redirect()->route('cv.show');
     }
 
     /**
