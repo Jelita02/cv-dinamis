@@ -35,14 +35,14 @@ class EducationController extends Controller
        $validasi =
        $request->validate([
         'tahun' => 'required|string|max:255',
-        'universitas' => 'required|string',
+        'sekolah' => 'required|string',
         'jurusan' => 'required|string',
 
         ]);
 
          // Simpan data ke database
         Education::create($validasi );
-        return view('show');
+        return redirect()->route('cv.show');
     }
 
     /**
